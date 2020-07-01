@@ -1,0 +1,68 @@
+ncverilog(64): 14.10-s005: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-s005: Started on Jun 02, 2020 at 11:41:48 CST
+ncverilog
+	-f pre.f
+		testfixture.v
+		ver2RC4.v
+		+nc64bit
+		+access+r
+Recompiling... reason: file './ver2RC4.v' is newer than expected.
+	expected: Tue Jun  2 11:39:48 2020
+	actual:   Tue Jun  2 11:41:41 2020
+file: ver2RC4.v
+	module worklib.RC4:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.RC4:v <0x38af0de0>
+			streams:  52, words: 32502
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:               80      80
+		Scalar wires:            10       -
+		Vectored wires:           9       -
+		Always blocks:           24      24
+		Initial blocks:          17      17
+		Cont. assignments:        5       5
+		Pseudo assignments:       2       2
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.testfixture:v
+Loading snapshot worklib.testfixture:v .................... Done
+*Verdi* Loading libsscore_ius141.so
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi_O-2018.09, Linux x86_64/64bit, 08/30/2018
+(C) 1996 - 2018 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'rc4.fsdb'
+*Verdi* : Begin traversing the scope (testfixture.rc4), layer (0).
+*Verdi* : Enable +struct and +mda dumping.
+*Verdi* : End of traversing.
+-----------------------------------------------------
+
+START!!! Simulation Start .....
+
+-----------------------------------------------------
+
+Key count =  32
+Plain count = 1442
+Cipher count = 1442
+ ---------------- Cipher is correct ! ---------------- 
+ ----------------- Plain is correct ! ----------------- 
+-------------------------------------------------------------
+
+--------------------- T B 1 - S U M M A R Y -----------------
+
+Congratulations! Cipher data have been generated successfully! The result is PASS!!
+
+Congratulations! Plain data have been generated successfully! The result is PASS!!
+
+Simulation complete via $finish(1) at time 182175 NS + 3
+./testfixture.v:251         $finish;
+ncsim> exit
+TOOL:	ncverilog	14.10-s005: Exiting on Jun 02, 2020 at 11:41:49 CST  (total: 00:00:01)
